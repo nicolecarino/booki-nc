@@ -1,100 +1,365 @@
-/****** General ***********/
+/****** General Styles ***********/
+/* Set default font for the whole document */
 * {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box; margin: 0; padding:0
 }
 
+
+    
+/* Define CSS variables for colors */
 :root {
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
 }
 
+/* Set icon color to main color */
 .fa-solid, .fa-regular {
     color: var(--main-color);
 }
 
+/* Style for the body */
 body {
-    display: flex;
-    justify-content: center;
+    display: block; /* Stack elements vertically */
+    justify-content: center; /* Align center (not really needed here) */
+    max-width: 1440px;
+    margin: auto;
 }
 
+/* Main container styling */
 .main-container {
     width: 100%;
-    padding: 0 50px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding in width */
+    padding: 0px;
 }
 
+/* Section title styling */
 .section-title {
     margin: 0;
     font-size: 22px;
 }
 
+/* Card container styling */
 .card {
     background-color: white;
     border-radius: 20px;
-    padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
+/* Image inside card styling */
 .card img {
-    object-fit: cover;
+    object-fit: cover; /* Ensure the image fills its container */
 }
 
+/* Card title styling */
 .card-title {
     font-size: 16px;
 }
 
+/* Styling for the price indicator */
 .euro {
     font-weight: 700;
 }
 
-.neutralStar {
-    color: var(--main-bg-color)
+/***** Header Styles *****/
+.header {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space out logo and nav links */
+    background-color: white;
+    width: 100%;
+    /* box-sizing: content-box; */
+    /***padding: 10px 20px 20px 20px;***/
 }
 
-/****** Accommodation And Popular ***********/
+/* Logo styling */
+.logo-container {
+    padding: 30px 50px 30px 50px;
+}
+
+.logo {
+    height: 20px;
+    max-width: 100%;
+
+}
+
+/* Navigation styling */
+.navigation {
+    display: flex; /* Align links horizontally */
+    justify-content: flex-end; /* Align links to the right */
+    padding: 10px 50px 10px 10px;
+}
+
+.nav-list {
+    list-style: none; /* Remove bullets from ordered list */
+    display: flex; /* Align list items in a row */
+    gap: 20px; /* Space between list items */
+}
+
+.navigation a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark gray color for links */
+    padding: 8px 5px 5px 5px; /* Add padding for hover effect */
+    position: relative;
+}
+
+/* Hover Effect for Navigation Links */
+.navigation a:hover {
+    border-top: 2px solid #0065FC; /* Add a blue line at the top on hover */
+}
+
+
+/****** Search Section ***********/
+
+/* Search Section Styling */
+
+.search-section {
+    padding: 20px 50px; /* Larger padding for desktop view */
+    text-align: left; /* Align left align text within the section */
+    line-height: 1.2;
+}
+
+/* Search Form Styling */
+.search-form {
+    display: flex; /* Use Flexbox to align elements in the search form */
+    justify-content: left; /* Align the form horizontally to the left*/
+    align-items: center; /* Align items vertically in the center */
+    margin-top: 35px; /* Add spacing above the form */
+}
+
+.search-bar {
+    display: flex; /* Use Flexbox to align input and button in the search bar */
+    background-color: white; /* White background color for the search bar */
+    border-radius: 15px; /* Rounded corners for the search bar */
+    width: fit-content; /* Width automatically adjusts to fit the content */
+    border: 1px solid #ddd; /* Light border around each button */
+}
+
+.location-icon {
+    color: #333; /* Dark gray color for the location icon */
+    font-size: 1.2em; /* Slightly larger font size for the icon */
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 14px 0 0 14px ;
+}
+
+.search-bar input {
+    border: none; /* Remove the default border around the input field */
+    padding: 10px; /* Padding inside the input field for comfort */
+    font-size: 16px; /* Font size for the input text */
+    font-weight: bold;
+}
+
+.search-button {
+    background-color: #0065FC; /* Blue background for the search button */
+    color: white; /* White text for contrast */
+    font-weight: bold;
+    border: 0px; /* Remove default border */
+    border-radius: 0 14px 14px 0; /* Rounded corners for the button */ /*need to make the button fill up the size of the search bar*/
+    padding: 20px; /* Padding inside the button */
+    cursor: pointer; /* Show pointer cursor to indicate it's clickable */
+    align-items: center; /* Center items in the button*/
+}
+
+.search-button .button-icon {
+    display: none; /* Hide the icon by default for larger screens */
+    color: white;
+}
+
+.filter-buttons-section{
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Filter Buttons Styling */
+.filter-buttons{
+    display: flex; /* Use Flexbox to align filter buttons */
+    justify-content: left; /* Align left the filter buttons horizontally */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if necessary */
+    gap: 10px; /* Space between each filter button */
+    /* margin-top: 35px; Space above the filter buttons */
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.filter-title {
+    margin-top: 15px;
+}
+
+.filter-buttons button {
+    display: flex; /* Use Flexbox to align icon and text */
+    align-items: center; /* Align icon and text vertically in the center */
+    gap: 5px; /* Space between icon and text */
+    border: 1px solid #ddd; /* Light border around each button */
+    padding: 10px 20px; /* Padding inside the button (top-bottom 10px, left-right 20px) */
+    border-radius: 30px; /* Rounded corners for a pill shape */
+    cursor: pointer; /* Show pointer cursor to indicate it's clickable */
+    font-weight: 600; /* Make the text bold */
+    background-color: white;
+}
+
+.filter-buttons button:hover {
+    background-color: #DEEBFF; /* Blue color when hovered */
+}
+
+.filter-buttons i {
+    color: #0065FC; /* Blue color for icons inside the filter buttons */
+}
+
+.available-text-icon {
+    margin-top: 35px; /* Space above the filter buttons */
+}
+
+
+
+/****** Accommodation And Popular Section ***********/
+/* Main container for accommodation and popular sections */
 .accommodation-and-popular {
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Display sections side-by-side */
+    justify-content: space-between; /* Space between the sections */
+    margin: 0px 50px;
 }
 
 .accommodation-and-popular section {
-    background-color: var(--main-bg-color);
     border-radius: 20px;
     padding: 30px;
     box-sizing: border-box;
 }
 
-/****** Accommodation ***********/
+
+/****** Accommodation Section ***********/
+/* Styling for the accommodation section */
+
+
+/****** Accommodation Section ***********/
 .accommodation {
-    width: 65%;
+    width: 65%; /* Accommodation section takes up 65% of the container width */
+    background-color: var(--main-bg-color);
+   
 }
 
-/****** Popular ***********/
+/* Title section in accommodation area */
+.accommodation-title {
+    display: flex;
+}
+
+.accommodation .card-container {
+    display: flex;
+    margin-top: 33px; /* Add spacing between cards */
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: 30px;
+
+}
+
+.accommodation .card {
+    width: 250px;
+    padding: 5px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+}
+
+/* Image styling for accommodation cards */
+.accommodation .card img {
+    width: 100%;
+    height: 124px; /* Consistent image height */
+    object-fit: cover; /* Keep image proportions */
+    border-top-left-radius: 16px; /* Rounded corners */
+    border-top-right-radius: 16px;
+    margin-bottom: 8px; /* Space below image */
+}
+
+/* Card hover effect */
+.accommodation .card:hover {
+    transform: scale(1.02); /* Slight scale-up on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+
+/* Title styling within accommodation cards */
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    
+}
+
+/* Subtitle styling within accommodation cards */
+.card-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    
+}
+
+/* Rating area styling in accommodation cards */
+.card-rating {
+    margin-bottom: 8px;
+    padding-left: 10px;
+    
+}
+
+.accommodation-showmore {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+
+}
+
+.accommodation-showmore a{
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark gray color for links */
+}
+
+.accommodation-showmore a:hover{
+    text-decoration: underline;
+}
+
+
+/****** Popular Section ***********/
 .popular {
-    width: 32%;
+    width: 32%; /* Set width of popular section */
+    background-color: var(--main-bg-color);
 }
 
+/* Title section in popular area */
 .popular-title {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Space out the title and icon */
+    align-items: center; /* Center align */
 }
 
+/* Styling for each card in popular section */
 .popular-cards .card {
     display: flex;
-    margin-top: 33px;
+    padding: 5px;
+    margin-top: 30px; /* Add spacing between cards */
 }
 
+/* Card hover effect */
+.popular .card:hover {
+    transform: scale(1.02); /* Slight scale-up on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Image styling for popular cards */
 .popular-cards img {
-    width: 33%;
+    width: 33%; /* Take 1/3rd of card width */
     height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 16px; /* Rounded corners */
+    border-bottom-left-radius: 16px;
 }
 
+/* Content area inside the popular cards */
 .popular-cards .card-content {
-    width: 67%;
+    width: 67%; /* Take 2/3rd of card width */
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -107,10 +372,324 @@ body {
     margin-bottom: 4px;
 }
 
+/* Subtitle styling */
 .popular-cards .card-subtitle {
     margin: 0;
 }
 
+/* Rating area styling */
 .popular-cards .card-rating {
     margin-bottom: 5px;
+}
+
+
+/*Things to Do in Marseille*/
+.to-do {
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: 0 50px; /* Add padding on left and right */
+    box-sizing: border-box; /* Include padding in width */ 
+}
+
+.to-do .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 35px; /* Add spacing between cards and title */
+    justify-content: space-between;
+}
+
+.to-do .card {
+    width: 300px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+}
+
+/* Image styling for accommodation cards */
+.to-do .card img {
+    width: 100%;
+    height: 380px; /* Consistent image height */
+    object-fit: cover; /* Keep image proportions */
+    border-top-left-radius: 20px; /* Rounded corners */
+    border-top-right-radius: 20px;
+}
+
+/* Card hover effect */
+.to-do .card:hover {
+    transform: scale(1.02); /* Slight scale-up on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+
+/* Title styling within accommodation cards */
+.to-do .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 15px;
+}
+
+
+
+/***** Footer Styles *****/
+/* Footer container styling */
+.footer {
+    display: flex; /* Arrange footer columns side by side */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin: 35px 50px 0px 50px;
+}
+
+
+/* Footer column styling */
+.footer-column {
+    flex: 1; /* All columns have equal width */
+    padding: 0 20px;
+}
+
+/* Footer headings */
+.footer-column h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Footer list styling (remove bullets and default padding) */
+.footer-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Footer list items styling */
+.footer-list li {
+    margin-bottom: 15px; /* Add some space between each item */
+}
+
+/* Footer links styling */
+.footer-column a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+/*tablet 1024*/
+
+@media screen and (max-width: 1024px) {
+
+
+.accommodation-and-popular {
+    flex-direction: column;
+    gap: 30px;
+    margin: 0px;
+}
+
+.accommodation-and-popular section {
+    padding: 30px;
+    border-radius: 0px;
+}
+
+.accommodation {
+    width: 100%;
+}
+.popular {
+    align-items: center;
+    width: 100%;
+}
+.popular-title {
+    justify-content: space-between;
+}
+
+.popular-cards .card {
+    width: 100%;        
+    margin-top: 15px;
+}
+
+.popular-cards .card-content {
+    padding-left: 5px;
+}
+
+.accommodation .card {
+    width: 100%;
+}
+
+.accommodation .card-container {
+    gap: 15px;
+}
+
+.popular-cards img {
+    height: 100px;
+}
+
+}
+
+
+/*mobile*/
+
+@media screen and (max-width: 768px) {
+
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .navigation {
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .nav-list {
+        gap:0px;
+    }
+
+    .navigation a {
+        padding: 15px 35px;
+        border-bottom: 2px solid #DFDFDF;
+    }
+ 
+    .navigation a:hover {
+        border-top: none;
+        border-bottom: 2px solid #0065FC;
+    }
+    
+    .logo-container {
+        padding: 20px;
+    }
+
+    .search-section {
+        padding: 20px;
+    }
+
+    .search-bar {
+        height: 40px;
+    }
+
+
+    .location-icon {
+        color: #333; /* Dark gray color for the location icon */
+        font-size: 1.2em; /* Slightly larger font size for the icon */
+        padding: 10px 15px;
+        border-radius: 14px 0 0 14px;
+    }
+    
+    .search-bar input {
+        padding: 10px; /* Padding inside the input field for comfort */
+        width: 250px;
+    }
+    
+    .search-button {
+        padding: 12px; /* Padding inside the button */
+        border-radius: 12px; /* Rounded corners for the button */ /*need to make the button fill up the size of the search bar*/
+        box-shadow: 1px 3px 3px lightgrey;
+        border: 5px #0065FC; /* Remove default border */
+    }
+
+    .search-bar input {
+        font-size: 16px;
+    }
+
+    .button-text {
+        display: none;
+    }
+
+    .search-button .button-icon {
+        display: inline; /* Hide the icon by default for larger screens */
+        color: white;
+    }
+
+    .filter-buttons-section{
+        display: block;
+    }
+
+    .filter-buttons {
+        justify-content: space-evenly;
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+
+    .filter-buttons button {
+        width: 165px;
+        justify-content: center;
+    }
+
+    .accommodation-and-popular {
+        flex-direction: column-reverse;
+        gap: 30px;
+        margin: 0px;
+    }
+
+    .accommodation-and-popular section {
+        padding: 30px;
+        border-radius: 0px;
+    }
+
+    .accommodation {
+        width: 100%;
+        background-color: white;
+    }
+    .popular {
+        align-items: center;
+        width: 100%;
+    }
+    .popular-title {
+        justify-content: space-between;
+    }
+    
+    .popular-cards .card {
+        width: 100%;        
+        margin-top: 15px;
+    }
+
+    .popular-cards .card-content {
+        padding-left: 5px;
+    }
+
+    .accommodation .card {
+        width: 100%;
+    }
+
+    .accommodation .card-container {
+        gap: 15px;
+    }
+
+    .popular-cards img {
+        height: 100px;
+    }
+
+    .to-do .card-container{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .to-do .card {
+        width: 100%;
+        height: 200px;
+    }
+
+    .to-do .card img {
+        width: 100%;
+        height: 141px;
+    }
+
+    .footer {
+        margin: 0px;
+        padding: 30px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-column {
+        padding: 0px;
+    }
 }
