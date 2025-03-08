@@ -481,7 +481,7 @@ body {
     text-decoration: underline; /* Add underline on hover for better UX */
 }
 
-/*tablet 1024*/
+/* tablet 1024*/
 
 @media screen and (max-width: 1024px) {
 
