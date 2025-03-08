@@ -249,7 +249,6 @@ body {
     justify-content: flex-start;
     flex-flow: row wrap;
     gap: 30px;
-
 }
 
 .accommodation .card {
@@ -396,7 +395,8 @@ body {
     display: flex;
     flex-flow: row wrap;
     margin-top: 35px; /* Add spacing between cards and title */
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 15px;
 }
 
 .to-do .card {
@@ -404,7 +404,6 @@ body {
     height: 440px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     box-sizing: border-box;
     
 }
@@ -427,9 +426,10 @@ body {
 
 /* Title styling within accommodation cards */
 .to-do .card-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     margin: 20px 15px;
+    padding: 0px;
 }
 
 
@@ -485,39 +485,17 @@ body {
 
 @media screen and (max-width: 1024px) {
 
-
-.accommodation-and-popular {
-    flex-direction: column;
-    gap: 30px;
-    margin: 0px;
+.filter-buttons-section {
+    display: block;
 }
 
-.accommodation-and-popular section {
-    padding: 30px;
-    border-radius: 0px;
+.accommodation-and-popular {
+    flex-direction: column; /* Display sections side-by-side */
+    margin: 0px 50px;
+    gap: 15px;
 }
 
 .accommodation {
-    width: 100%;
-}
-.popular {
-    align-items: center;
-    width: 100%;
-}
-.popular-title {
-    justify-content: space-between;
-}
-
-.popular-cards .card {
-    width: 100%;        
-    margin-top: 15px;
-}
-
-.popular-cards .card-content {
-    padding-left: 5px;
-}
-
-.accommodation .card {
     width: 100%;
 }
 
@@ -525,17 +503,59 @@ body {
     gap: 15px;
 }
 
+.popular {
+    width: 100%;
+}
+
+.popular-cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: 15px;
+}
+
+.popular-title {
+    justify-content: space-between;
+}
+
+.popular-cards .card {
+    width: 250px;
+}
+
+.popular-cards .card-content {
+    padding-left: 0px;
+}
+
 .popular-cards img {
     height: 100px;
 }
 
+
+.to-do .card {
+    width: 200px;
+    height: 270px;
+    
 }
 
+.to-do .card img {
+    width: 100%;
+    height: 200px; /* Consistent image height */
+    object-fit: cover; /* Keep image proportions */
+    border-top-left-radius: 20px; /* Rounded corners */
+    border-top-right-radius: 20px;
+}
+
+/* Title styling within accommodation cards */
+.to-do .card-title {
+    margin: 15px 10px;
+    justify-content: space-around;
+}
+
+}
 
 /*mobile*/
 
 @media screen and (max-width: 768px) {
-
 
     .header {
         flex-direction: column;
@@ -553,7 +573,7 @@ body {
     }
 
     .navigation a {
-        padding: 15px 35px;
+        padding: 15px 15px;
         border-bottom: 2px solid #DFDFDF;
     }
  
@@ -690,6 +710,171 @@ body {
     }
 
     .footer-column {
+        gap: 30px;
+        margin: 15px;
+    }
+}
+
+
+/* smaller mobile */
+@media screen and (max-width: 320px) {
+
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .navigation {
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .nav-list {
+        gap:0px;
+    }
+
+    .navigation a {
+        
+        padding: 15px;
+        border-bottom: 2px solid #DFDFDF;
+    }
+ 
+    .navigation a:hover {
+        border-top: none;
+        border-bottom: 2px solid #0065FC;
+    }
+    
+    .logo-container {
+        padding: 20px;
+    }
+
+    .search-section {
+        padding: 20px;
+    }
+
+    .search-bar {
+        height: 40px;
+    }
+
+    .location-icon {
+        color: #333; /* Dark gray color for the location icon */
+        font-size: 1.2em; /* Slightly larger font size for the icon */
+        padding: 10px 15px;
+        border-radius: 14px 0 0 14px;
+    }
+    
+    .search-bar input {
+        padding: 10px; /* Padding inside the input field for comfort */
+        width: 100%;
+    }
+    
+    .search-button {
+        padding: 12px; /* Padding inside the button */
+        border-radius: 12px; /* Rounded corners for the button */ /*need to make the button fill up the size of the search bar*/
+        box-shadow: 1px 3px 3px lightgrey;
+        border: 5px #0065FC; /* Remove default border */
+    }
+
+    .search-bar input {
+        font-size: 16px;
+    }
+
+    .button-text {
+        display: none;
+    }
+
+    .search-button .button-icon {
+        display: inline; /* Hide the icon by default for larger screens */
+        color: white;
+    }
+
+    .filter-buttons-section{
+        display: block;
+    }
+
+    .filter-buttons {
+        justify-content: space-evenly;
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+
+    .filter-buttons button {
+        width: 165px;
+        justify-content: center;
+    }
+
+    .accommodation-and-popular {
+        flex-direction: column-reverse;
+        gap: 30px;
+        margin: 0px;
+    }
+
+    .accommodation-and-popular section {
+        padding: 30px;
+        border-radius: 0px;
+    }
+
+    .accommodation {
+        width: 100%;
+        background-color: white;
+    }
+    .popular {
+        align-items: center;
+        width: 100%;
+    }
+    .popular-title {
+        justify-content: space-between;
+    }
+    
+    .popular-cards .card {
+        width: 100%;        
+        margin-top: 15px;
+    }
+
+    .popular-cards .card-content {
+        padding-left: 5px;
+    }
+
+    .accommodation .card {
+        width: 100%;
+    }
+
+    .accommodation .card-container {
+        gap: 15px;
+    }
+
+    .popular-cards img {
+        height: 100px;
+    }
+
+    .to-do .card-container{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .to-do .card {
+        width: 100%;
+        height: 200px;
+    }
+
+    .to-do .card img {
+        width: 100%;
+        height: 141px;
+        
+    }
+
+    .footer {
+        margin: 0px;
+        padding: 30px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-column {
         padding: 0px;
+        gap: 30px;
     }
 }
